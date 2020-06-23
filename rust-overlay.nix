@@ -177,7 +177,7 @@ let
                 echo "setting interpreter of $i"
                 patchelf \
                   --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" \
-                  --set-rpath "\$ORIGIN/../lib:${pkgs.zlib}/lib" \
+                  --set-rpath "\$ORIGIN/../lib:${nixpkgs.zlib}/lib" \
                   "$i" || true
               done < <(find "$dir" -type f -print0)
             }
